@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Vue JS</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="kalkulator">
+            <div class="box">
+                {{ calc }}
+            </div>
+            <div class="value">
+                {{ value }}
+            </div>
+            <div class="button">
+                <div class="btn" v-for="x in 10" v-on:click="setModifier(x-1)">
+                    {{ x-1 }}
+                </div>
+                <div class="btn" v-on:click="tambah()">
+                    +
+                </div>
+                <div class="btn" v-on:click="kali()">
+                    x
+                </div>
+                <div class="btn" v-on:click="bagi()">
+                    /
+                </div>
+                <div class="btn" v-on:click="kurang()">
+                    -
+                </div>
+                <div class="btn" v-on:click="hitung()">
+                    =
+                </div>
+                <div class="btn" v-on:click="reset()">
+                    c
+                </div>
+            </div>
+        </div>
+    </div>
+<script src="../js/vue.js"></script>
+<script>
+    let app = new Vue({
+        el: "#app",
+        data: {
+            calc: '',
+            value: null
+        },
+        methods: {
+            tambah() {
+                this.calc += '+'
+            },
+            kali() {
+                this.calc += '*'
+            },
+            bagi() {
+                this.calc += '/'
+            },
+            kurang() {
+                this.calc += '-'
+            },
+            setModifier(x) {
+                this.calc += x
+            },
+            hitung() {
+                this.value = eval(this.calc)
+                this.calc  = this.value
+            },
+            reset() {
+                this.value = null
+                this.calc  = ''
+            }
+        }
+    })
+</script>
+</body>
+</html>

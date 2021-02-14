@@ -1,0 +1,65 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url(../img/ccddd567041b96e38125bc20dcd3d06a.jpg);
+  background-size: cover;
+  background-position: center;
+  color: rgba(255, 255, 255, 0.5);
+  font-family: "poppins";
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.kalkulator {
+  width: 320px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(71, 71, 71, 0.5);
+}
+
+.button {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 280px;
+}
+
+.btn {
+  flex: 0 0 93px;
+  height: 63px;
+  border: 1px solid transparent;
+  line-height: 61px;
+  transition: all 0.2s;
+  border-radius: 3px;
+}
+
+.btn:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+  border-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.box {
+  height: 30px;
+  line-height: 30px;
+}
+
+.value {
+  height: 50px;
+  line-height: 50px;
+  color: white;
+  font-size: 30px;
+}
